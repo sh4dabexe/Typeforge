@@ -1,0 +1,6 @@
+{
+  "name": "TypeForge",
+  "description": "Fast, minimal, keyboard-first typing practice and speed test platform with streaks, analytics, and performance tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

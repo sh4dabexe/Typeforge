@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #121316;
+    --bg-surface: #1a1c23;
+    --bg-surface-hover: #232630;
+    --border-subtle: #2a2e3b;
+    --text-primary: #f1f3f7;
+    --text-secondary: #9ca3af;
+    --text-muted: #525866;
+    --accent: #f59e0b;
+    --accent-hover: #d97706;
+    --accent-glow: rgba(245, 158, 11, 0.15);
+    --char-correct: #f1f3f7;
+    --char-incorrect: #ef4444;
+    --char-extra: #b91c1c;
+    --char-untyped: #4b5563;
+    --caret-color: #f59e0b;
+  }
+
+  [data-theme="cyber"] {
+    --bg-main: #0a0e14;
+    --bg-surface: #111822;
+    --bg-surface-hover: #182333;
+    --border-subtle: #1f2e42;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --text-muted: #484f58;
+    --accent: #10b981;
+    --accent-hover: #059669;
+    --accent-glow: rgba(16, 185, 129, 0.18);
+    --char-correct: #e6edf3;
+    --char-incorrect: #f43f5e;
+    --char-extra: #be123c;
+    --char-untyped: #3d4c60;
+    --caret-color: #10b981;
+  }
+
+  [data-theme="serene"] {
+    --bg-main: #0c1322;
+    --bg-surface: #162035;
+    --bg-surface-hover: #1e2c48;
+    --border-subtle: #243556;
+    --text-primary: #f0f6fc;
+    --text-secondary: #94a3b8;
+    --text-muted: #475569;
+    --accent: #38bdf8;
+    --accent-hover: #0284c7;
+    --accent-glow: rgba(56, 189, 248, 0.18);
+    --char-correct: #f0f6fc;
+    --char-incorrect: #fb7185;
+    --char-extra: #e11d48;
+    --char-untyped: #334155;
+    --caret-color: #38bdf8;
+  }
+
+  [data-theme="nord"] {
+    --bg-main: #242933;
+    --bg-surface: #2e3440;
+    --bg-surface-hover: #3b4252;
+    --border-subtle: #434c5e;
+    --text-primary: #eceff4;
+    --text-secondary: #d8dee9;
+    --text-muted: #4c566a;
+    --accent: #88c0d0;
+    --accent-hover: #81a1c1;
+    --accent-glow: rgba(136, 192, 208, 0.2);
+    --char-correct: #eceff4;
+    --char-incorrect: #bf616a;
+    --char-extra: #ab444e;
+    --char-untyped: #4c566a;
+    --caret-color: #88c0d0;
+  }
+
+  [data-theme="sunset"] {
+    --bg-main: #18131e;
+    --bg-surface: #241b2e;
+    --bg-surface-hover: #31253e;
+    --border-subtle: #3f2f50;
+    --text-primary: #f5f3f7;
+    --text-secondary: #a79bb5;
+    --text-muted: #5e5070;
+    --accent: #f43f5e;
+    --accent-hover: #e11d48;
+    --accent-glow: rgba(244, 63, 94, 0.2);
+    --char-correct: #f5f3f7;
+    --char-incorrect: #fb923c;
+    --char-extra: #ea580c;
+    --char-untyped: #4c3d5e;
+    --caret-color: #f43f5e;
+  }
+
+  [data-theme="monochrome"] {
+    --bg-main: #050505;
+    --bg-surface: #121212;
+    --bg-surface-hover: #1e1e1e;
+    --border-subtle: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
+    --text-muted: #525252;
+    --accent: #ffffff;
+    --accent-hover: #e5e5e5;
+    --accent-glow: rgba(255, 255, 255, 0.15);
+    --char-correct: #ffffff;
+    --char-incorrect: #737373;
+    --char-extra: #525252;
+    --char-untyped: #383838;
+    --caret-color: #ffffff;
+  }
+
+  [data-theme="porcelain"] {
+    --bg-main: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #f1f5f9;
+    --border-subtle: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
+    --accent-glow: rgba(79, 70, 229, 0.15);
+    --char-correct: #0f172a;
+    --char-incorrect: #e11d48;
+    --char-extra: #be123c;
+    --char-untyped: #cbd5e1;
+    --caret-color: #4f46e5;
+  }
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.font-typing {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Space Mono', monospace;
+}
+
+/* Caret blinking animation */
+@keyframes caretBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.caret-pulse {
+  animation: caretBlink 1s ease-in-out infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

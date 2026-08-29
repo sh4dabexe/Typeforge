@@ -1,0 +1,54 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "fields": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "lastActiveAt": { "type": "string" },
+        "timezone": { "type": "string" },
+        "currentStreak": { "type": "number" },
+        "longestStreak": { "type": "number" },
+        "totalTests": { "type": "number" },
+        "totalTypingTime": { "type": "number" },
+        "averageWpm": { "type": "number" },
+        "averageAccuracy": { "type": "number" },
+        "bestWpm": { "type": "number" },
+        "bestRawWpm": { "type": "number" },
+        "activeDaysCount": { "type": "number" }
+      }
+    },
+    "TypingTest": {
+      "collection": "users/{userId}/tests",
+      "fields": {
+        "mode": { "type": "string" },
+        "duration": { "type": "number" },
+        "wpm": { "type": "number" },
+        "rawWpm": { "type": "number" },
+        "accuracy": { "type": "number" },
+        "errors": { "type": "number" },
+        "correctCharacters": { "type": "number" },
+        "incorrectCharacters": { "type": "number" },
+        "totalCharacters": { "type": "number" },
+        "completedAt": { "type": "string" },
+        "activityDate": { "type": "string" }
+      }
+    },
+    "LeaderboardRecord": {
+      "collection": "leaderboard",
+      "fields": {
+        "userId": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "wpm": { "type": "number" },
+        "rawWpm": { "type": "number" },
+        "accuracy": { "type": "number" },
+        "mode": { "type": "string" },
+        "duration": { "type": "number" },
+        "completedAt": { "type": "string" }
+      }
+    }
+  }
+}
